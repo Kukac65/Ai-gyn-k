@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlipzyOfficial</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0d0d0d;
+color:white;
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+z-index:1000;
+flex-wrap:wrap;
+}
+
+nav button{
+background:none;
+border:none;
+color:#00ffff;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+font-size:14px;
+}
+
+nav button:hover{
+color:#ff00ff;
+}
+
+section{
+min-height:100vh;
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px 40px;
+}
+
+.active{
+display:flex;
+animation:fade 0.5s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(15px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+font-family:'Orbitron',sans-serif;
+font-size:40px;
+background:linear-gradient(90deg,#00ffff,#ff00ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+p{
+margin-top:20px;
+max-width:700px;
+line-height:1.7;
+opacity:0.85;
+}
+
+.btn{
+margin-top:30px;
+padding:12px 25px;
+border:2px solid #00ffff;
+background:transparent;
+color:#00ffff;
+cursor:pointer;
+transition:0.3s;
+border-radius:8px;
+}
+
+.btn:hover{
+background:#00ffff;
+color:black;
+}
+
+.card{
+margin-top:30px;
+padding:25px;
+border:1px solid #ff00ff;
+border-radius:15px;
+max-width:600px;
+width:100%;
+}
+
+a{
+color:#00ffff;
+text-decoration:none;
+}
+
+a:hover{
+color:#ff00ff;
+}
+
+/* Mobil optimalizálás */
+@media(max-width:600px){
+h1{
+font-size:28px;
+}
+nav{
+gap:10px;
+}
+nav button{
+font-size:12px;
+}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<button onclick="showPage('home')">Főoldal</button>
+<button onclick="showPage('portfolio')">Munkáim</button>
+<button onclick="showPage('about')">Magamról</button>
+<button onclick="showPage('contact')">Elérhetőség</button>
+</nav>
+
+<section id="home" class="active">
+<h1>FLIPZYOFFICIAL</h1>
+<p>
+Üdv a hivatalos oldalamon. Video editor és TikTok tartalomgyártó vagyok,
+aki főleg dinamikus, beat sync, cinematic és glow effektes videókat készít.
+A célom, hogy minden egyes edit látványos, pörgős és emlékezetes legyen.
+</p>
+<button class="btn" onclick="showPage('portfolio')">Munkáim megtekintése</button>
+</section>
+
+<section id="portfolio">
+<h1>MUNKÁIM</h1>
+<div class="card">
+<p>
+TikTok csatornám, ahol rendszeresen feltöltöm az editjeimet.
+Folyamatos fejlődés, egyre komolyabb effektek és minőség.
+Ha támogatni szeretnél, dobj egy like-ot.
+</p>
+<p style="margin-top:15px;">
+👉 <a href="https://www.tiktok.com/@flipzyofficial5?_r=1&_t=ZN-948oB4uhjnS" target="_blank">
+@flipzyofficial5 megtekintése
+</a>
+</p>
+</div>
+</section>
+
+<section id="about">
+<h1>MAGAMRÓL</h1>
+<p>
+Szenvedélyem a videószerkesztés. Szeretek új effekteket kipróbálni,
+hangra vágni a jeleneteket és olyan vizuális élményt adni,
+ami megfogja az embereket az első másodperctől.
+Folyamatosan tanulok és fejlesztem magam,
+hogy a tartalmaim egyre magasabb szintet képviseljenek.
+</p>
+<p>
+Célom, hogy a FlipzyOfficial név egy komoly edit brand legyen.
+</p>
+</section>
+
+<section id="contact">
+<h1>ELÉRHETŐSÉG</h1>
+<div class="card">
+<p><strong>TikTok:</strong> @flipzyofficial5</p>
+<p><strong>Discord:</strong> r6beni56_57145</p>
+<p>
+Ha együttműködés, edit kérés vagy bármilyen kérdés van,
+nyugodtan írj Discordon.
+</p>
+</div>
+</section>
+
+<script>
+function showPage(pageId){
+document.querySelectorAll("section").forEach(section=>{
+section.classList.remove("active");
+});
+document.getElementById(pageId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
