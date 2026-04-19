@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyscout | Győr-Moson-Sopron Megye III. Scout</title>
+    <style>
+        :root { --wyscout-red: #e60000; --bg-dark: #121212; --card-dark: #1e1e1e; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: white; margin: 0; }
+        
+        /* Navigáció */
+        .navbar { background: #000; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--wyscout-red); }
+        .logo { font-weight: bold; font-size: 24px; color: white; }
+        .logo span { color: var(--wyscout-red); }
+
+        /* Profil rész */
+        .main-container { padding: 40px; display: grid; grid-template-columns: 1fr 3fr; gap: 30px; }
+        .player-card { background: var(--card-dark); padding: 20px; border-radius: 12px; text-align: center; }
+        .player-img { width: 100%; border-radius: 8px; background: #333; margin-bottom: 15px; }
+
+        /* Statisztika */
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .stat-box { background: var(--card-dark); padding: 20px; border-radius: 12px; border-left: 4px solid var(--wyscout-red); }
+        .stat-val { font-size: 28px; font-weight: bold; display: block; }
+        .stat-label { color: #888; font-size: 12px; text-transform: uppercase; }
+
+        /* Csapatok és Regisztráció */
+        .section-title { border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 30px; }
+        .team-list { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .team-tag { background: #333; padding: 8px 15px; border-radius: 20px; font-size: 14px; }
+        .active-team { border: 1px solid var(--wyscout-red); color: var(--wyscout-red); }
+
+        .btn-register { background: var(--wyscout-red); color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">WY<span>SCOUT</span> HUB</div>
+    <div>U13-U14 Megyei Adatbázis</div>
+</nav>
+
+<div class="main-container">
+    <div class="player-card">
+        <div class="player-img">
+            <img src="https://via.placeholder.com/200x250/333/fff?text=UNTI+BENETT" alt="Unti Benett" style="width:100%">
+        </div>
+        <h2 style="margin: 5px 0;">UNTI BENETT</h2>
+        <p style="color: var(--wyscout-red); font-weight: bold;">GÖNYŰ SE</p>
+        <hr style="border: 0.5px solid #333;">
+        <p>Magasság: 150 cm</p>
+        <p>Súly: 36 kg</p>
+        <p>Születés: 2014</p>
+        <button class="btn-register" onclick="alert('Videó elemzés betöltése...')">VIDEÓK MEGTEKINTÉSE</button>
+    </div>
+
+    <div>
+        <h3 class="section-title">TELJESÍTMÉNY MUTATÓK</h3>
+        <div class="stats-grid">
+            <div class="stat-box"><span class="stat-val">88%</span><span class="stat-label">Lövőerő Index</span></div>
+            <div class="stat-box"><span class="stat-val">92%</span><span class="stat-label">Dinamika</span></div>
+            <div class="stat-box"><span class="stat-val">75%</span><span class="stat-label">Helyzetkihasználás</span></div>
+        </div>
+
+        <h3 class="section-title">ELLENFÉL FIGYELŐ (GY-M-S MEGYE III.)</h3>
+        <div class="team-list">
+            <div class="team-tag active-team">GÖNYŰ SE</div>
+            <div class="team-tag">VÁMOSSZABADI SE</div>
+            <div class="team-tag">NAGYBAJCS SE</div>
+            <div class="team-tag">BÁCSA SE</div>
+            <div class="team-tag">GYŐRSZENTIVÁN</div>
+            <div class="team-tag">PANNONHALMA SE</div>
+            <div class="team-tag">ÉCS KSE</div>
+        </div>
+
+        <h3 class="section-title">JÁTÉKOS FELVÉTEL</h3>
+        <p>Szeretnél bekerülni az adatbázisba? Küldd el a videóidat!</p>
+        <button class="btn-register" onclick="window.open('https://forms.google.com', '_blank')">ÚJ JÁTÉKOS REGISZTRÁCIÓJA</button>
+    </div>
+</div>
+
+</body>
+</html>
